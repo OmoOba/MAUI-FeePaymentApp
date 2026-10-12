@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FeePaymentApp.FeePaymentPage"
+    Title="Fee Payment"
+    BackgroundColor="{StaticResource PageBackgroundColor}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="25"
+            Spacing="18">
+
+            <Label
+                Text="Student Fee Payment"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="{StaticResource TextColor}"
+                HorizontalOptions="Center" />
+
+            <VerticalStackLayout Spacing="6">
+                <Label
+                    Text="Matric Number"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource TextColor}" />
+
+                <Entry
+                    x:Name="MatricEntry"
+                    Placeholder="Enter matric number"
+                    Keyboard="Numeric"
+                    BackgroundColor="{StaticResource SurfaceColor}"
+                    TextColor="{StaticResource TextColor}" />
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="6">
+                <Label
+                    Text="Fee Type"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource TextColor}" />
+
+                <Picker
+                    x:Name="FeeTypePicker"
+                    Title="Choose fee type"
+                    BackgroundColor="{StaticResource SurfaceColor}"
+                    TextColor="{StaticResource TextColor}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Acceptance fee</x:String>
+                            <x:String>Verification fee</x:String>
+                            <x:String>School fee</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="6">
+                <Label
+                    Text="Level"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    TextColor="{StaticResource TextColor}" />
+
+                <Picker
+                    x:Name="LevelPicker"
+                    Title="Choose level"
+                    BackgroundColor="{StaticResource SurfaceColor}"
+                    TextColor="{StaticResource TextColor}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>100</x:String>
+                            <x:String>200</x:String>
+                            <x:String>300</x:String>
+                            <x:String>400</x:String>
+                            <x:String>500</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </VerticalStackLayout>
+
+            <Button
+                Text="Submit"
+                BackgroundColor="{StaticResource PrimaryColor}"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                Clicked="OnSubmitClicked" />
+
+            <Label
+                x:Name="StatusLabel"
+                IsVisible="False"
+                TextColor="Green"
+                FontSize="18"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

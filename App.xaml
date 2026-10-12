@@ -5,9 +5,11 @@
     x:Class="FeePaymentApp.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Color x:Key="PageBackgroundColor">#FFFFFF</Color>
-            <Color x:Key="PrimaryColor">#1F51BA</Color>
-            <Color x:Key="SecondaryColor">#FFA500</Color>
+            <Color x:Key="PageBackgroundColor">#F4F7FB</Color>
+            <Color x:Key="PrimaryColor">#1F51FF</Color>
+            <Color x:Key="AccentColor">#FFB000</Color>
+            <Color x:Key="TextColor">#1C1C1C</Color>
+            <Color x:Key="SurfaceColor">#FFFFFF</Color>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
