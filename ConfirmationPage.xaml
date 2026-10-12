@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FeePaymentApp.ConfirmationPage"
+    Title="Payment Confirmation"
+    BackgroundColor="{StaticResource PageBackgroundColor}"
+    NavigationPage.HasBackButton="False">
+
+    <VerticalStackLayout Padding="0">
+        <!-- Header -->
+        <Grid
+            ColumnDefinitions="*"
+            RowDefinitions="*"
+            BackgroundColor="#4CAF50"
+            Padding="20,30">
+            <VerticalStackLayout Spacing="5">
+                <Label
+                    Text="Payment Successful"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="White" />
+                <Label
+                    Text="Your payment has been processed"
+                    FontSize="14"
+                    TextColor="#E8F5E9" />
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- Success Icon -->
+        <Frame
+            CornerRadius="50"
+            BackgroundColor="#4CAF50"
+            HasShadow="True"
+            Padding="10"
+            HorizontalOptions="Center"
+            Margin="0,20">
+            <Label
+                Text="✓"
+                FontSize="60"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"
+                WidthRequest="80"
+                HeightRequest="80" />
+        </Frame>
+
+        <!-- Confirmation Details -->
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <!-- Transaction Details Card -->
+                <Frame
+                    CornerRadius="12"
+                    BorderColor="#E0E0E0"
+                    BorderWidth="1"
+                    Padding="15"
+                    HasShadow="True">
+                    <VerticalStackLayout Spacing="12">
+                        <Label
+                            Text="Transaction Details"
+                            FontSize="16"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource PrimaryColor}" />
+
+                        <Grid
+                            ColumnDefinitions="auto,*"
+                            RowDefinitions="auto,auto,auto,auto,auto,auto"
+                            ColumnSpacing="10"
+                            RowSpacing="10">
+                            <!-- Transaction ID -->
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="Ref ID:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="TransactionIdLabel"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+
+                            <!-- Matric Number -->
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Text="Matric No:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="MatricNoLabel"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+
+                            <!-- Student Name -->
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Text="Name:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="NameLabel"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+
+                            <!-- Fee Type -->
+                            <Label
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Text="Fee Type:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="FeeTypeLabel"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+
+                            <!-- Level -->
+                            <Label
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Text="Level:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="LevelLabel"
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+
+                            <!-- Date/Time -->
+                            <Label
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Text="Date:"
+                                FontSize="12"
+                                FontAttributes="Bold"
+                                TextColor="{StaticResource TextColor}" />
+                            <Label
+                                x:Name="DateLabel"
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                FontSize="12"
+                                TextColor="{StaticResource TextColor}" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Amount Card -->
+                <Frame
+                    CornerRadius="12"
+                    BackgroundColor="#F0F4FF"
+                    BorderColor="{StaticResource PrimaryColor}"
+                    BorderWidth="2"
+                    Padding="15"
+                    HasShadow="True">
+                    <VerticalStackLayout Spacing="8" HorizontalOptions="Center">
+                        <Label
+                            Text="Amount Paid"
+                            FontSize="12"
+                            TextColor="{StaticResource TextColor}" />
+                        <Label
+                            x:Name="AmountLabel"
+                            FontSize="28"
+                            FontAttributes="Bold"
+                            TextColor="{StaticResource PrimaryColor}" />
+                    </VerticalStackLayout>
+                </Frame>
+
+                <!-- Action Buttons -->
+                <Button
+                    Text="Download Receipt"
+                    BackgroundColor="{StaticResource AccentColor}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    Clicked="OnDownloadReceiptClicked" />
+
+                <Button
+                    Text="Back to Home"
+                    BackgroundColor="{StaticResource PrimaryColor}"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    Clicked="OnBackToHomeClicked" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

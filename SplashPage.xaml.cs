@@ -12,10 +12,13 @@ public partial class SplashPage : ContentPage
 
     private async Task LoadMainPageAsync()
     {
-        await Task.Delay(2500);
+        await Task.Delay(3000);
         MainThread.BeginInvokeOnMainThread(() =>
         {
-            Application.Current!.MainPage = new FeePaymentPage();
+            Application.Current!.MainPage = new NavigationPage(new FeePaymentPage())
+            {
+                BarBackgroundColor = Color.FromArgb("#1F51FF")
+            };
         });
     }
 }

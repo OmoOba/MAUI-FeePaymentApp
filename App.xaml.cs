@@ -1,3 +1,5 @@
+using FeePaymentApp.Services;
+
 namespace FeePaymentApp;
 
 public partial class App : Application
